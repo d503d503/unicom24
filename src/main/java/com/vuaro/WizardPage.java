@@ -41,6 +41,190 @@ public class WizardPage extends BaseActions{
     @FindBy(xpath = ".//span[contains(text(),\"Создать новую анкету\")]")
     WebElement createNewAnketa;
 
+    //------Anketa----
+
+    @FindBy(xpath = ".//input[@id=\"client-last_name\"]")
+    WebElement clientLastName;
+
+    public void setClientLastName(String lastName){
+        clientLastName.sendKeys(lastName);
+    }
+
+    @FindBy(xpath = ".//input[@id=\"client-first_name\"]")
+    WebElement clientFirstName;
+
+    public void setClientFirstName(String firstName){
+        clientFirstName.sendKeys(firstName);
+    }
+
+    @FindBy(xpath = ".//input[@id=\"client-middle_name\"]")
+    WebElement clientMiddleName;
+
+    public void setClientMiddleName(String middleName){
+        clientMiddleName.sendKeys(middleName);
+    }
+
+    @FindBy(xpath = ".//input[@id=\"client-birthday\"]")
+    WebElement clientBirthday;
+
+    public void setClientBirthday(String birthday){
+        clientBirthday.sendKeys(birthday);
+    }
+
+    @FindBy(xpath = ".//input[@id=\"client-passport\"]")
+    WebElement clientPassport;
+
+    public void setClientPassport(String passport){
+        clientPassport.sendKeys(passport);
+    }
+
+    @FindBy(xpath = ".//textarea[@id=\"client-passport_issue\"]")
+    WebElement clientPassportIssued;
+
+    public void setClientPassportIssued(String issuedInfo){
+        clientPassportIssued.sendKeys(issuedInfo);
+    }
+
+    @FindBy(xpath = ".//input[@id=\"client-passport_date\"]")
+    WebElement clientPassportDate;
+
+    public void setClientPassportDate(String passportDate){
+        clientPassportDate.sendKeys(passportDate);
+    }
+
+    @FindBy(xpath = ".//input[@id=\"client-phone_cell\"]")
+    WebElement clientCellPhone;
+
+    public void setClientCellPhone(String cellPhoneNumber){
+        clientCellPhone.sendKeys(cellPhoneNumber);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"client_sex_chosen\"]")
+    WebElement sexChosen;
+
+    public void seClientSex(String sex){
+        sexChosen.sendKeys(sex);
+    }
+
+    @FindBy(xpath = ".//*[@textarea=\"client-address_reg\"]")
+    WebElement address;
+
+
+    @FindBy(xpath = ".//*[@textarea=\"client-address_reg\"]")
+    WebElement addressRegistered;
+
+    @FindBy(xpath = ".//*[@textarea=\"client-address_fact\"]")
+    WebElement addressFact;
+
+    @FindBy(xpath = ".//*[@input=\"client-job\"]")
+    WebElement clientJob;
+
+
+    @FindBy(xpath = ".//*[@input=\"client-job_activity_kind\"]")
+    WebElement clientJobType;
+
+
+    @FindBy(xpath = ".//*[@input=\"client-job_joining_date\"]")
+    WebElement clientJobDate;
+
+    @FindBy(xpath = ".//*[@input=\"client-phone_work\"]")
+    WebElement workPhone;
+
+    @FindBy(xpath = ".//*[@input=\"client-job_post\"]")
+    WebElement workPost;
+
+
+    @FindBy(xpath = ".//*[@input=\"client-total_experience_date_start\"]")
+    WebElement workStart;
+
+
+    @FindBy(xpath = ".//*[@input=\"client-job_employer_phone\"]")
+    WebElement employeePhone;
+
+    @FindBy(xpath = ".//*[@input=\"client-job_org_head\"]")
+    WebElement headName;
+
+    @FindBy(xpath = ".//*[@input=\"client-job_supervisor\"]")
+    WebElement supervisorName;
+
+    @FindBy(xpath = ".//*[@input=\"client-total_experience_year\"]")
+    WebElement experienceYear;
+
+    @FindBy(xpath = ".//*[@input=\"client-total_experience_month\"]")
+    WebElement experienceMonth;
+
+    @FindBy(xpath = ".//*[@input=\"client-average_income_6months\"]")
+    WebElement srednSalary;
+
+    @FindBy(xpath = ".//*[@input=\"client-job_address_fact\"]")
+    WebElement jobFactAddress;
+
+    @FindBy(xpath = ".//*[@input=\"client-job_address_legal\"]")
+    WebElement jobLegalAddress;
+
+    @FindBy(xpath = ".//*[@input=\"client_education_chosen\n\"]")
+    WebElement educationLevel;
+
+    @FindBy(xpath = ".//*[@id=\"contact-last_name\n\"]")
+    WebElement contactLastName;
+
+    @FindBy(xpath = ".//*[@id=\"contact-first_name\n\"]")
+    WebElement contactFirstName;
+
+    @FindBy(xpath = ".//*[@id=\"contact-middle_name\n\"]")
+    WebElement contactMiddleName;
+
+    @FindBy(xpath = ".//*[@id=\"contact-relation_degree\n\"]")
+    WebElement contactRelationDegree;
+
+    @FindBy(xpath = ".//*[@id=\"contact-post\n\"]")
+    WebElement contactPost;
+
+    @FindBy(xpath = ".//*[@id=\"contact-job\n\"]")
+    WebElement contactJob;
+
+    @FindBy(xpath = ".//*[@id=\"contact-phone_cell\n\"]")
+    WebElement contactPhoneCell;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public WizardPage(WebDriver driver) {
         this.driver = driver;

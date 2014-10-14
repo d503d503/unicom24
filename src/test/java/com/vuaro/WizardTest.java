@@ -54,7 +54,13 @@ public class WizardTest extends BaseActions{
 
         wizardPage.getCreateNewAnketa();
 
+        //переходим к заполнению анкеты
 
+        wizardPage.setClientLastName("Иванов");
+
+        wizardPage.setClientFirstName("Иван");
+
+        wizardPage.setClientFirstName("Иванович");
 
 
 
