@@ -60,7 +60,48 @@ public class WizardTest extends BaseActions{
 
         wizardPage.setClientFirstName("Иван");
 
-        wizardPage.setClientFirstName("Иванович");
+        wizardPage.setClientMiddleName("Иванович");
+
+        wizardPage.setClientBirthday("11.10.1986");
+
+        wizardPage.setClientBirthPlace("Урюпинск");
+
+        wizardPage.setClientPassport("1122333444");
+
+        wizardPage.setClientPassportIssued("ОВД РОВД МВД ГИБДД");
+
+        wizardPage.setClientPassportDate("11.10.2002");
+
+        wizardPage.setClientCellPhone("9111111111");
+
+        wizardPage.seClientSex("Мужской");
+
+        wizardPage.openAddressPopUP();
+
+            wizardPage.setOblast("Ленинградская");
+
+            wizardPage.setLocality("Колпино");
+
+            wizardPage.setStreet("Ленина");
+
+            wizardPage.setHouseNumber("11");
+
+            wizardPage.submitPopUpFormOkBtn();
+
+        wizardPage.openAddressFactPopUP();
+
+            wizardPage.setOblast("Ленинградская");
+
+            wizardPage.setLocality("Колпино");
+
+            wizardPage.setStreet("Ленина");
+
+            wizardPage.setHouseNumber("11");
+
+            wizardPage.submitPopUpFormOkBtn();
+
+
+
 
 
 

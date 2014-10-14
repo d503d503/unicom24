@@ -1,5 +1,6 @@
 package com.vuaro;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,6 +49,7 @@ public class WizardPage extends BaseActions{
 
     public void setClientLastName(String lastName){
         clientLastName.sendKeys(lastName);
+
     }
 
     @FindBy(xpath = ".//input[@id=\"client-first_name\"]")
@@ -55,6 +57,7 @@ public class WizardPage extends BaseActions{
 
     public void setClientFirstName(String firstName){
         clientFirstName.sendKeys(firstName);
+
     }
 
     @FindBy(xpath = ".//input[@id=\"client-middle_name\"]")
@@ -62,20 +65,34 @@ public class WizardPage extends BaseActions{
 
     public void setClientMiddleName(String middleName){
         clientMiddleName.sendKeys(middleName);
+
     }
 
     @FindBy(xpath = ".//input[@id=\"client-birthday\"]")
     WebElement clientBirthday;
 
     public void setClientBirthday(String birthday){
+        clientBirthday.clear();
         clientBirthday.sendKeys(birthday);
+
     }
+
+    @FindBy(xpath = ".//input[@id=\"client-birthplace\"]")
+    WebElement clientBirthplace;
+
+    public void setClientBirthPlace(String birthplace){
+        clientBirthplace.sendKeys(birthplace);
+
+    }
+
+
 
     @FindBy(xpath = ".//input[@id=\"client-passport\"]")
     WebElement clientPassport;
 
     public void setClientPassport(String passport){
         clientPassport.sendKeys(passport);
+
     }
 
     @FindBy(xpath = ".//textarea[@id=\"client-passport_issue\"]")
@@ -83,31 +100,94 @@ public class WizardPage extends BaseActions{
 
     public void setClientPassportIssued(String issuedInfo){
         clientPassportIssued.sendKeys(issuedInfo);
+
     }
 
     @FindBy(xpath = ".//input[@id=\"client-passport_date\"]")
     WebElement clientPassportDate;
 
     public void setClientPassportDate(String passportDate){
+        clientPassportDate.clear();
         clientPassportDate.sendKeys(passportDate);
+
     }
 
     @FindBy(xpath = ".//input[@id=\"client-phone_cell\"]")
     WebElement clientCellPhone;
 
     public void setClientCellPhone(String cellPhoneNumber){
+        clientCellPhone.clear();
         clientCellPhone.sendKeys(cellPhoneNumber);
+
     }
 
     @FindBy(xpath = ".//*[@id=\"client_sex_chosen\"]")
-    WebElement sexChosen;
+    WebElement sexChosen; //это див
+
 
     public void seClientSex(String sex){
-        sexChosen.sendKeys(sex);
+
+
+        sexChosen.click();
+        WebElement clientSex = driver.findElement(By.xpath(".//li[text()=\"Мужской\"]"));
+        clientSex.click();
+
+
     }
 
-    @FindBy(xpath = ".//*[@textarea=\"client-address_reg\"]")
-    WebElement address;
+    @FindBy(xpath = ".//label[@for=\"client-address_reg\"]")
+    WebElement addressLabel;
+
+    public void openAddressPopUP(){
+        addressLabel.click();
+    }
+
+    //всплывающее окно ввода адреса
+    @FindBy(xpath = ".//*[@id=\"region\"]")
+    WebElement oblastInput;
+
+    public void setOblast(String oblast){
+        oblastInput.sendKeys(oblast);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"locality\"]")
+    WebElement localityInput;
+
+    public void setLocality(String loc){
+        localityInput.sendKeys(loc);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"street\"]")
+    WebElement streetInput;
+
+    public void setStreet(String street){
+        streetInput.sendKeys(street);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"house_number\"]")
+    WebElement houseNumberInput;
+
+    public void setHouseNumber(String houseNum){
+        houseNumberInput.sendKeys(houseNum);
+    }
+
+
+    @FindBy(xpath = ".//*[@class=\"i-button__text\" and text()=\"ОК\"]")
+    WebElement submitPopUpButton;
+
+    public void submitPopUpFormOkBtn(){
+        submitPopUpButton.click();
+    }
+
+    @FindBy(xpath = ".//label[@for=\"client-address_fact\"]")
+    WebElement addressFactLabel;
+
+    public void openAddressFactPopUP(){
+        addressFactLabel.click();
+    }
+
+
+    //
 
 
     @FindBy(xpath = ".//*[@textarea=\"client-address_reg\"]")
