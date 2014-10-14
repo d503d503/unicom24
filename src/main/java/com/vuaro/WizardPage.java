@@ -393,6 +393,7 @@ public class WizardPage extends BaseActions{
 
     public void setGoDocumentsUpload(){
         documentsUploadBtn.click();
+        sleep(2000);
     }
 
     @FindBy(xpath = ".//div[@class=\"step-upload_group\"][1]/input")
