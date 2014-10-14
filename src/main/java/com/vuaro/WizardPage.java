@@ -1,10 +1,13 @@
 package com.vuaro;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.File;
 
 /**
  * Created by D503 on 13.10.14.
@@ -196,75 +199,245 @@ public class WizardPage extends BaseActions{
     @FindBy(xpath = ".//*[@textarea=\"client-address_fact\"]")
     WebElement addressFact;
 
-    @FindBy(xpath = ".//*[@input=\"client-job\"]")
+    @FindBy(xpath = ".//*[@id=\"client-job\"]")
     WebElement clientJob;
 
+    public void setClientJob(String jobName){
+        clientJob.sendKeys(jobName);
+    }
 
-    @FindBy(xpath = ".//*[@input=\"client-job_activity_kind\"]")
+
+    @FindBy(xpath = ".//*[@id=\"client-job_activity_kind\"]")
     WebElement clientJobType;
 
+    public void setActivityType(String type){
+        clientJobType.sendKeys(type);
 
-    @FindBy(xpath = ".//*[@input=\"client-job_joining_date\"]")
+    }
+
+
+    @FindBy(xpath = ".//*[@id=\"client-job_joining_date\"]")
     WebElement clientJobDate;
 
-    @FindBy(xpath = ".//*[@input=\"client-phone_work\"]")
+    public void setClientJoiningDate(String date){
+        clientJobDate.clear();
+        clientJobDate.sendKeys(date);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"client-phone_work\"]")
     WebElement workPhone;
 
-    @FindBy(xpath = ".//*[@input=\"client-job_post\"]")
+    public void setClientPhoneWork(String phone){
+        workPhone.sendKeys(phone);
+
+    }
+
+    @FindBy(xpath = ".//*[@id=\"client-job_post\"]")
     WebElement workPost;
 
+    public void setClientWorkPost(String post){
+        workPost.sendKeys(post);
+    }
 
-    @FindBy(xpath = ".//*[@input=\"client-total_experience_date_start\"]")
+
+
+
+    @FindBy(xpath = ".//*[@id=\"client-total_experience_date_start\"]")
     WebElement workStart;
 
+    public void setClientTotalExpFromDate(String date){
+        workStart.clear();
+        workStart.sendKeys(date);
 
-    @FindBy(xpath = ".//*[@input=\"client-job_employer_phone\"]")
+    }
+
+
+    @FindBy(xpath = ".//*[@id=\"client-job_employees_count\"]")
+    WebElement employeeCount;
+
+    public void setEmployeeCount(String count){
+        employeeCount.sendKeys(count);
+    }
+
+
+    @FindBy(xpath = ".//*[@id=\"client-job_employer_phone\"]")
     WebElement employeePhone;
 
-    @FindBy(xpath = ".//*[@input=\"client-job_org_head\"]")
+    public void setEmployeePhone(String phone){
+        employeePhone.sendKeys(phone);
+    }
+
+
+
+    @FindBy(xpath = ".//*[@id=\"client-job_org_head\"]")
     WebElement headName;
 
-    @FindBy(xpath = ".//*[@input=\"client-job_supervisor\"]")
+    public void setClientJobOrgHead(String name){
+        headName.sendKeys(name);
+    }
+
+
+
+    @FindBy(xpath = ".//*[@id=\"client-job_supervisor\"]")
     WebElement supervisorName;
 
-    @FindBy(xpath = ".//*[@input=\"client-total_experience_year\"]")
+    public void setSupervisorName(String name){
+        supervisorName.sendKeys(name);
+    }
+
+
+
+    @FindBy(xpath = ".//*[@id=\"client-total_experience_year\"]")
     WebElement experienceYear;
 
-    @FindBy(xpath = ".//*[@input=\"client-total_experience_month\"]")
+    public void setExperienceYear(String year){
+        experienceYear.sendKeys(year);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"client-total_experience_month\"]")
     WebElement experienceMonth;
 
-    @FindBy(xpath = ".//*[@input=\"client-average_income_6months\"]")
+    public void setExperienceMonth(String month){
+        experienceMonth.sendKeys(month);
+    }
+
+
+
+    @FindBy(xpath = ".//*[@id=\"client-average_income_6months\"]")
     WebElement srednSalary;
 
-    @FindBy(xpath = ".//*[@input=\"client-job_address_fact\"]")
+    public void setAverSalary(String salary){
+        srednSalary.sendKeys(salary);
+    }
+
+    @FindBy(xpath = ".//label[@for=\"client-job_address_fact\"]")
     WebElement jobFactAddress;
 
-    @FindBy(xpath = ".//*[@input=\"client-job_address_legal\"]")
+    public void openFactJobAddressWindow(){
+        jobFactAddress.click();
+    }
+
+
+
+    @FindBy(xpath = ".//label[@for=\"client-job_address_legal\"]")
     WebElement jobLegalAddress;
 
-    @FindBy(xpath = ".//*[@input=\"client_education_chosen\n\"]")
+    public void openLegalJobAddressWindow(){
+        jobLegalAddress.click();
+    }
+
+    @FindBy(xpath = ".//*[@id=\"client_education_chosen\"]")
     WebElement educationLevel;
 
-    @FindBy(xpath = ".//*[@id=\"contact-last_name\n\"]")
+    @FindBy(xpath = ".//*[@id=\"client_education_chosen\"]//li[text()=\"Неполное среднее\"]")
+    WebElement eduLevel;
+
+    public void setEducationLevel(){
+        educationLevel.click();
+        eduLevel.click();
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-last_name\"]")
     WebElement contactLastName;
 
-    @FindBy(xpath = ".//*[@id=\"contact-first_name\n\"]")
+    public void setContactLastName(String lastName){
+        contactLastName.sendKeys(lastName);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-first_name\"]")
     WebElement contactFirstName;
 
-    @FindBy(xpath = ".//*[@id=\"contact-middle_name\n\"]")
+    public void setContactFirstName(String name){
+        contactFirstName.sendKeys(name);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-middle_name\"]")
     WebElement contactMiddleName;
 
-    @FindBy(xpath = ".//*[@id=\"contact-relation_degree\n\"]")
+    public void setContactMiddleName(String middleName){
+        contactMiddleName.sendKeys(middleName);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-relation_degree\"]")
     WebElement contactRelationDegree;
 
-    @FindBy(xpath = ".//*[@id=\"contact-post\n\"]")
+    public void setContactRelationDegree(String degree){
+        contactRelationDegree.sendKeys(degree);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-post\"]")
     WebElement contactPost;
 
-    @FindBy(xpath = ".//*[@id=\"contact-job\n\"]")
+    public void setContactPost(String Post) {
+        contactPost.sendKeys(Post);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-job\"]")
     WebElement contactJob;
 
-    @FindBy(xpath = ".//*[@id=\"contact-phone_cell\n\"]")
+    public void setContactJob(String job){
+        contactJob.sendKeys(job);
+    }
+
+    @FindBy(xpath = ".//*[@id=\"contact-phone_cell\"]")
     WebElement contactPhoneCell;
+
+    public void setContactPhoneCell(String phone) {
+        contactPhoneCell.clear();
+        contactPhoneCell.sendKeys(phone);
+    }
+
+
+    @FindBy(xpath = ".//span[text()=\"Загрузить документы\"]")
+    WebElement documentsUploadBtn;
+
+    public void setGoDocumentsUpload(){
+        documentsUploadBtn.click();
+    }
+
+    @FindBy(xpath = ".//div[@class=\"step-upload_group\"][1]/input")
+    WebElement agreementUpload;
+
+    public void uploadAgreement(String fileName){
+        String script="b=document.getElementsByTagName('input')[0];\n" +
+                "b.style.position=\"relative\";\n" +
+                "b.style.top=\"0\";\n" +
+                "b.style.width=\"200px\";\n" +
+                "b.style.height=\"20px\";\n" +
+                "b.style.opacity=100;";
+
+        ((JavascriptExecutor)driver).executeScript(script);
+        File file = new File(fileName);
+//        driver.findElement(By.xpath(".//div[@class=\"step-upload_group\"][1]/input")).sendKeys(image.getAbsolutePath());
+        agreementUpload.sendKeys(file.getAbsolutePath());
+    }
+
+
+    @FindBy(xpath = ".//div[@class=\"step-upload_group\"][2]/input")
+    WebElement passportUpload;
+
+    public void uploadPassportCopy(String fileName){
+
+        String script="b=document.getElementsByTagName('input')[1];\n" +
+                "b.style.position=\"relative\";\n" +
+                "b.style.top=\"0\";\n" +
+                "b.style.width=\"200px\";\n" +
+                "b.style.height=\"20px\";\n" +
+                "b.style.opacity=100;";
+
+        ((JavascriptExecutor)driver).executeScript(script);
+
+        File file = new File(fileName);
+
+        passportUpload.sendKeys(file.getAbsolutePath());
+    }
+
+    @FindBy(xpath = ".//span[@class=\"i-juicy-button__text__bold\" and contains(text(),\"банк\")]")
+    WebElement sendButton;
+
+    public void sendRequestToBank(){
+        sendButton.click();
+    }
 
 
 
